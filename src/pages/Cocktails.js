@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 
 export default function Cocktails() {
   const [searchText, setSearchText] = useState("");
@@ -33,12 +32,17 @@ export default function Cocktails() {
       {cocktails.map((cocktail) => {
         return (
           <div key={cocktail.idDrink}>
-            <p>Name: {cocktail.strDrink}</p>
+            <p className="cocktail">Name: {cocktail.strDrink}</p>
             <img
               className="cocktailImg"
               src={cocktail.strDrinkThumb}
               alt="poster"
             />
+            <p>
+              Ingredients: {cocktail.strIngredient1}, {cocktail.strIngredient2},{" "}
+              {cocktail.strIngredient3}, {cocktail.strIngredient4}
+            </p>
+            <p>How to make it: {cocktail.strInstructions}</p>
           </div>
         );
       })}

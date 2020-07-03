@@ -22,12 +22,17 @@ export default function Cocktails() {
       {cocktails.map((cocktail) => {
         return (
           <div key={cocktail.idDrink}>
-            <p>Name: {cocktail.strDrink}</p>
+            <h3>Name: {cocktail.strDrink}</h3>
             <img
               className="cocktailImg"
               src={cocktail.strDrinkThumb}
               alt="poster"
             />
+            <p>
+              Ingredients: {cocktail.strIngredient1}, {cocktail.strIngredient2},{" "}
+              {cocktail.strIngredient3}, {cocktail.strIngredient4}
+            </p>
+            <p>How to make it: {cocktail.strInstructions}</p>
           </div>
         );
       })}
